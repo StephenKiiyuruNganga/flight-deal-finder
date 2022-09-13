@@ -12,6 +12,6 @@ dataManager.getFlightData()
 sheet_data = dataManager.data
 
 for row in sheet_data:
-    code = FlightSearch.getIATACode()
+    code = FlightSearch.getIATACode(row["city"])
     if not row["iataCode"]:
         dataManager.updateRow(row["id"], "iataCode", code)
